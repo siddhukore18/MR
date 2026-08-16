@@ -73,8 +73,7 @@ public class MrDashboard {
                         "-fx-background-radius: 12px;" +
                         "-fx-border-color: rgba(255, 255, 255, 0.4);" +
                         "-fx-border-radius: 12px;" +
-                        "-fx-border-width: 1px;"
-        );
+                        "-fx-border-width: 1px;");
 
         ImageView logoView = getLogoView();
         if (logoView != null) {
@@ -110,8 +109,7 @@ public class MrDashboard {
                 createSidebarItem("Hospitals / Clinics", "🏥", false),
                 createSidebarItem("Product Report", "📦", false),
                 createSidebarItem("Reports", "📊", false),
-                createSidebarItem("Settings", "⚙️", false)
-        );
+                createSidebarItem("Settings", "⚙️", false));
 
         Region sidebarSpacer = new Region();
         VBox.setVgrow(sidebarSpacer, Priority.ALWAYS);
@@ -126,8 +124,7 @@ public class MrDashboard {
                         "-fx-border-color: rgba(255, 255, 255, 0.15);" +
                         "-fx-border-radius: 14px;" +
                         "-fx-border-width: 1px;" +
-                        "-fx-cursor: hand;"
-        );
+                        "-fx-cursor: hand;");
 
         profileCard.setOnMouseClicked(e -> {
             try {
@@ -189,15 +186,14 @@ public class MrDashboard {
             if (btn.getText().contains(sectionName)) {
                 btn.setStyle(
                         "-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: bold; " +
-                                "-fx-text-fill: white; -fx-background-color: linear-gradient(to right, #3B82F6, #2563EB); " +
-                                "-fx-background-radius: 12px; -fx-cursor: hand;"
-                );
+                                "-fx-text-fill: white; -fx-background-color: linear-gradient(to right, #3B82F6, #2563EB); "
+                                +
+                                "-fx-background-radius: 12px; -fx-cursor: hand;");
             } else {
                 btn.setStyle(
                         "-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: 500; " +
                                 "-fx-text-fill: #93C5FD; -fx-background-color: transparent; " +
-                                "-fx-background-radius: 12px; -fx-cursor: hand;"
-                );
+                                "-fx-background-radius: 12px; -fx-cursor: hand;");
             }
         }
 
@@ -254,15 +250,14 @@ public class MrDashboard {
         if (active) {
             btn.setStyle(
                     "-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: bold; " +
-                            "-fx-text-fill: white; -fx-background-color: linear-gradient(to right, #3B82F6, #2563EB); " +
-                            "-fx-background-radius: 12px; -fx-cursor: hand;"
-            );
+                            "-fx-text-fill: white; -fx-background-color: linear-gradient(to right, #3B82F6, #2563EB); "
+                            +
+                            "-fx-background-radius: 12px; -fx-cursor: hand;");
         } else {
             btn.setStyle(
                     "-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: 500; " +
                             "-fx-text-fill: #93C5FD; -fx-background-color: transparent; " +
-                            "-fx-background-radius: 12px; -fx-cursor: hand;"
-            );
+                            "-fx-background-radius: 12px; -fx-cursor: hand;");
         }
 
         btn.setOnMouseEntered(e -> {
@@ -270,8 +265,7 @@ public class MrDashboard {
                 btn.setStyle(
                         "-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: 600; " +
                                 "-fx-text-fill: white; -fx-background-color: rgba(255, 255, 255, 0.12); " +
-                                "-fx-background-radius: 12px; -fx-cursor: hand;"
-                );
+                                "-fx-background-radius: 12px; -fx-cursor: hand;");
             }
         });
 
@@ -280,8 +274,7 @@ public class MrDashboard {
                 btn.setStyle(
                         "-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: 500; " +
                                 "-fx-text-fill: #93C5FD; -fx-background-color: transparent; " +
-                                "-fx-background-radius: 12px; -fx-cursor: hand;"
-                );
+                                "-fx-background-radius: 12px; -fx-cursor: hand;");
             }
         });
 
@@ -319,8 +312,7 @@ public class MrDashboard {
                 "-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-font-weight: bold; " +
                         "-fx-text-fill: #475569; -fx-background-color: #F1F5F9; " +
                         "-fx-padding: 8px 16px; -fx-background-radius: 12px; " +
-                        "-fx-border-color: #E2E8F0; -fx-border-radius: 12px; -fx-border-width: 1px;"
-        );
+                        "-fx-border-color: #E2E8F0; -fx-border-radius: 12px; -fx-border-width: 1px;");
 
         topHeader.getChildren().addAll(greetingBox, headerSpacer, dateBadge);
         mainContent.getChildren().add(topHeader);
@@ -357,15 +349,13 @@ public class MrDashboard {
         HBox.setHgrow(leftCol, Priority.ALWAYS);
         leftCol.getChildren().addAll(
                 createDailyScheduleCard(),
-                createTaskSummaryCard()
-        );
+                createTaskSummaryCard());
 
         VBox rightCol = new VBox(20);
         rightCol.setPrefWidth(360);
         rightCol.getChildren().addAll(
                 createRecentActivitiesCard(),
-                createProductReportCard()
-        );
+                createProductReportCard());
 
         contentColumns.getChildren().addAll(leftCol, rightCol);
         mainContent.getChildren().add(contentColumns);
@@ -411,12 +401,14 @@ public class MrDashboard {
         HBox filterBar = new HBox(12);
         filterBar.setAlignment(Pos.CENTER_LEFT);
         filterBar.setPadding(new Insets(16));
-        filterBar.setStyle("-fx-background-color: white; -fx-background-radius: 14px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        filterBar.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 14px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
 
         TextField searchInput = new TextField();
         searchInput.setPromptText("🔍 Search doctor or hospital name...");
         searchInput.setPrefWidth(300);
-        searchInput.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-padding: 8px 12px; -fx-background-radius: 8px; -fx-border-color: #CBD5E1; -fx-border-radius: 8px;");
+        searchInput.setStyle(
+                "-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-padding: 8px 12px; -fx-background-radius: 8px; -fx-border-color: #CBD5E1; -fx-border-radius: 8px;");
 
         Button filterAll = createPillButton("All (8)", true);
         Button filterCompleted = createPillButton("Completed (5)", false);
@@ -427,11 +419,14 @@ public class MrDashboard {
         // Schedule Visit Cards List
         VBox scheduleList = new VBox(14);
         scheduleList.getChildren().addAll(
-                createDetailedScheduleItem("09:00 AM", "Dr. Amit Sharma", "Cardiologist", "City Care Hospital • Room 204", "Product Discussion", "Completed", "#10B981", "#DCFCE7"),
-                createDetailedScheduleItem("11:30 AM", "Dr. Rahul Patil", "Neurologist", "ABC Clinic • Suite 12", "Product Overview & Samples", "Pending", "#F59E0B", "#FEF3C7"),
-                createDetailedScheduleItem("02:00 PM", "Dr. Sneha Joshi", "Pediatrician", "Health Plus Clinic • Ward B", "New Product Intro", "Pending", "#F59E0B", "#FEF3C7"),
-                createDetailedScheduleItem("04:30 PM", "Dr. Vikram Rao", "General Physician", "Sunshine Hospital • OPD 5", "Product Report Follow-up", "Scheduled", "#3B82F6", "#DBEAFE")
-        );
+                createDetailedScheduleItem("09:00 AM", "Dr. Amit Sharma", "Cardiologist",
+                        "City Care Hospital • Room 204", "Product Discussion", "Completed", "#10B981", "#DCFCE7"),
+                createDetailedScheduleItem("11:30 AM", "Dr. Rahul Patil", "Neurologist", "ABC Clinic • Suite 12",
+                        "Product Overview & Samples", "Pending", "#F59E0B", "#FEF3C7"),
+                createDetailedScheduleItem("02:00 PM", "Dr. Sneha Joshi", "Pediatrician", "Health Plus Clinic • Ward B",
+                        "New Product Intro", "Pending", "#F59E0B", "#FEF3C7"),
+                createDetailedScheduleItem("04:30 PM", "Dr. Vikram Rao", "General Physician",
+                        "Sunshine Hospital • OPD 5", "Product Report Follow-up", "Scheduled", "#3B82F6", "#DBEAFE"));
 
         page.getChildren().addAll(topRow, filterBar, scheduleList);
         return page;
@@ -461,18 +456,21 @@ public class MrDashboard {
                 createPillButton("Cardiology", false),
                 createPillButton("Neurology", false),
                 createPillButton("Pediatrics", false),
-                createPillButton("General Medicine", false)
-        );
+                createPillButton("General Medicine", false));
 
         // Doctors Grid (2 Columns)
         GridPane docGrid = new GridPane();
         docGrid.setHgap(16);
         docGrid.setVgap(16);
 
-        VBox doc1 = createDoctorCard("Dr. Amit Sharma", "Cardiologist", "City Care Hospital", "12 Visits Completed", "+1 555-0192", "#3B82F6");
-        VBox doc2 = createDoctorCard("Dr. Rahul Patil", "Neurologist", "ABC Clinic", "8 Visits Completed", "+1 555-0144", "#10B981");
-        VBox doc3 = createDoctorCard("Dr. Sneha Joshi", "Pediatrician", "Health Plus Clinic", "15 Visits Completed", "+1 555-0178", "#8B5CF6");
-        VBox doc4 = createDoctorCard("Dr. Vikram Rao", "General Physician", "Sunshine Hospital", "6 Visits Completed", "+1 555-0123", "#F59E0B");
+        VBox doc1 = createDoctorCard("Dr. Amit Sharma", "Cardiologist", "City Care Hospital", "12 Visits Completed",
+                "+1 555-0192", "#3B82F6");
+        VBox doc2 = createDoctorCard("Dr. Rahul Patil", "Neurologist", "ABC Clinic", "8 Visits Completed",
+                "+1 555-0144", "#10B981");
+        VBox doc3 = createDoctorCard("Dr. Sneha Joshi", "Pediatrician", "Health Plus Clinic", "15 Visits Completed",
+                "+1 555-0178", "#8B5CF6");
+        VBox doc4 = createDoctorCard("Dr. Vikram Rao", "General Physician", "Sunshine Hospital", "6 Visits Completed",
+                "+1 555-0123", "#F59E0B");
 
         GridPane.setHgrow(doc1, Priority.ALWAYS);
         GridPane.setHgrow(doc2, Priority.ALWAYS);
@@ -507,11 +505,15 @@ public class MrDashboard {
 
         VBox hospList = new VBox(14);
         hospList.getChildren().addAll(
-                createHospitalCard("City Care Hospital", "Super Specialty Hospital", "104 Health Ave, Central District", "45 Affiliated Doctors", "18 Visits This Month", "#3B82F6"),
-                createHospitalCard("ABC Clinic", "Polyclinic & Diagnostic Center", "45 Park Street, North Sector", "12 Affiliated Doctors", "14 Visits This Month", "#10B981"),
-                createHospitalCard("Health Plus Clinic", "Pediatric & Family Care", "88 Sunrise Blvd, West Zone", "18 Affiliated Doctors", "22 Visits This Month", "#8B5CF6"),
-                createHospitalCard("Sunshine Hospital", "General Healthcare Center", "12 Medical Center Way, East Sector", "60 Affiliated Doctors", "30 Visits This Month", "#F59E0B")
-        );
+                createHospitalCard("City Care Hospital", "Super Specialty Hospital", "104 Health Ave, Central District",
+                        "45 Affiliated Doctors", "18 Visits This Month", "#3B82F6"),
+                createHospitalCard("ABC Clinic", "Polyclinic & Diagnostic Center", "45 Park Street, North Sector",
+                        "12 Affiliated Doctors", "14 Visits This Month", "#10B981"),
+                createHospitalCard("Health Plus Clinic", "Pediatric & Family Care", "88 Sunrise Blvd, West Zone",
+                        "18 Affiliated Doctors", "22 Visits This Month", "#8B5CF6"),
+                createHospitalCard("Sunshine Hospital", "General Healthcare Center",
+                        "12 Medical Center Way, East Sector", "60 Affiliated Doctors", "30 Visits This Month",
+                        "#F59E0B"));
 
         page.getChildren().addAll(headBox, hospList);
         return page;
@@ -593,7 +595,8 @@ public class MrDashboard {
         // Action Center Card
         VBox exportCard = new VBox(16);
         exportCard.setPadding(new Insets(20));
-        exportCard.setStyle("-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        exportCard.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
 
         Label expTitle = new Label("📥 Download & Export Reports");
         expTitle.setFont(Font.font("Segoe UI", FontWeight.BOLD, 16));
@@ -629,7 +632,8 @@ public class MrDashboard {
 
         VBox profileForm = new VBox(16);
         profileForm.setPadding(new Insets(24));
-        profileForm.setStyle("-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        profileForm.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
 
         Label formTitle = new Label("👤 Representative Profile Information");
         formTitle.setFont(Font.font("Segoe UI", FontWeight.BOLD, 16));
@@ -681,8 +685,7 @@ public class MrDashboard {
                 "-fx-background-color: white; " +
                         "-fx-background-radius: 16px; " +
                         "-fx-border-color: #E2E8F0; -fx-border-width: 1px; -fx-border-radius: 16px; " +
-                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);"
-        );
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);");
 
         addCardHoverEffect(card);
 
@@ -724,8 +727,7 @@ public class MrDashboard {
                 "-fx-background-color: white; " +
                         "-fx-background-radius: 16px; " +
                         "-fx-border-color: #E2E8F0; -fx-border-width: 1px; -fx-border-radius: 16px; " +
-                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);"
-        );
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);");
 
         addCardHoverEffect(card);
 
@@ -740,7 +742,8 @@ public class MrDashboard {
         HBox.setHgrow(sp, Priority.ALWAYS);
 
         Button viewAllBtn = new Button("View All ➔");
-        viewAllBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;");
+        viewAllBtn.setStyle(
+                "-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;");
         viewAllBtn.setOnAction(e -> navigateToSection("Daily Schedule"));
 
         header.getChildren().addAll(title, sp, viewAllBtn);
@@ -778,34 +781,35 @@ public class MrDashboard {
 
         VBox rows = new VBox(8);
         rows.getChildren().addAll(
-                createScheduleRow("09:00 AM", "Dr. Amit Sharma", "City Care Hospital", "Product Discussion", "Completed", "#10B981", "#DCFCE7"),
-                createScheduleRow("11:30 AM", "Dr. Rahul Patil", "ABC Clinic", "Product Overview", "Pending", "#F59E0B", "#FEF3C7"),
-                createScheduleRow("02:00 PM", "Dr. Sneha Joshi", "Health Plus Clinic", "New Product Intro", "Pending", "#F59E0B", "#FEF3C7"),
-                createScheduleRow("04:30 PM", "Dr. Vikram Rao", "Sunshine Hospital", "Product Report Follow-up", "Scheduled", "#3B82F6", "#DBEAFE")
-        );
+                createScheduleRow("09:00 AM", "Dr. Amit Sharma", "City Care Hospital", "Product Discussion",
+                        "Completed", "#10B981", "#DCFCE7"),
+                createScheduleRow("11:30 AM", "Dr. Rahul Patil", "ABC Clinic", "Product Overview", "Pending", "#F59E0B",
+                        "#FEF3C7"),
+                createScheduleRow("02:00 PM", "Dr. Sneha Joshi", "Health Plus Clinic", "New Product Intro", "Pending",
+                        "#F59E0B", "#FEF3C7"),
+                createScheduleRow("04:30 PM", "Dr. Vikram Rao", "Sunshine Hospital", "Product Report Follow-up",
+                        "Scheduled", "#3B82F6", "#DBEAFE"));
 
         card.getChildren().addAll(header, tableHeader, rows);
         return card;
     }
 
-    private HBox createScheduleRow(String time, String doc, String hosp, String purp, String status, String statusColor, String bgHex) {
+    private HBox createScheduleRow(String time, String doc, String hosp, String purp, String status, String statusColor,
+            String bgHex) {
         HBox row = new HBox(12);
         row.setAlignment(Pos.CENTER_LEFT);
         row.setPadding(new Insets(10, 12, 10, 12));
         row.setStyle(
                 "-fx-background-color: white; -fx-background-radius: 10px; " +
-                        "-fx-border-color: #F1F5F9; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-cursor: hand;"
-        );
+                        "-fx-border-color: #F1F5F9; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-cursor: hand;");
 
         row.setOnMouseEntered(e -> row.setStyle(
                 "-fx-background-color: #F8FAFC; -fx-background-radius: 10px; " +
-                        "-fx-border-color: #CBD5E1; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-cursor: hand;"
-        ));
+                        "-fx-border-color: #CBD5E1; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-cursor: hand;"));
 
         row.setOnMouseExited(e -> row.setStyle(
                 "-fx-background-color: white; -fx-background-radius: 10px; " +
-                        "-fx-border-color: #F1F5F9; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-cursor: hand;"
-        ));
+                        "-fx-border-color: #F1F5F9; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-cursor: hand;"));
 
         Label t = new Label(time);
         t.setPrefWidth(90);
@@ -831,8 +835,7 @@ public class MrDashboard {
         sBadge.setStyle(
                 "-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-font-weight: bold; " +
                         "-fx-text-fill: " + statusColor + "; -fx-background-color: " + bgHex + "; " +
-                        "-fx-padding: 4px 10px; -fx-background-radius: 8px;"
-        );
+                        "-fx-padding: 4px 10px; -fx-background-radius: 8px;");
         sBadge.setPrefWidth(100);
         sBadge.setAlignment(Pos.CENTER);
 
@@ -847,8 +850,7 @@ public class MrDashboard {
                 "-fx-background-color: white; " +
                         "-fx-background-radius: 16px; " +
                         "-fx-border-color: #E2E8F0; -fx-border-width: 1px; -fx-border-radius: 16px; " +
-                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);"
-        );
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);");
 
         addCardHoverEffect(card);
 
@@ -863,7 +865,8 @@ public class MrDashboard {
         HBox.setHgrow(sp, Priority.ALWAYS);
 
         Button viewAllBtn = new Button("View All ➔");
-        viewAllBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;");
+        viewAllBtn.setStyle(
+                "-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;");
         viewAllBtn.setOnAction(e -> navigateToSection("Reports"));
 
         header.getChildren().addAll(title, sp, viewAllBtn);
@@ -912,8 +915,7 @@ public class MrDashboard {
         legend.getChildren().addAll(
                 createLegendItem("Completed", "5 (42%)", "#10B981"),
                 createLegendItem("Pending", "5 (42%)", "#F59E0B"),
-                createLegendItem("In Progress", "2 (16%)", "#3B82F6")
-        );
+                createLegendItem("In Progress", "2 (16%)", "#3B82F6"));
 
         chartBody.getChildren().addAll(donutStack, legend);
         card.getChildren().addAll(header, chartBody);
@@ -946,8 +948,7 @@ public class MrDashboard {
                 "-fx-background-color: white; " +
                         "-fx-background-radius: 16px; " +
                         "-fx-border-color: #E2E8F0; -fx-border-width: 1px; -fx-border-radius: 16px; " +
-                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);"
-        );
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);");
 
         addCardHoverEffect(card);
 
@@ -966,10 +967,10 @@ public class MrDashboard {
         VBox feed = new VBox(10);
         feed.getChildren().addAll(
                 createActivityItem("Visit completed with Dr. Amit Sharma", "City Care Hospital", "09:45 AM", "✅"),
-                createActivityItem("Product report submitted for CardioSafe", "Product Details Updated", "11:40 AM", "📦"),
+                createActivityItem("Product report submitted for CardioSafe", "Product Details Updated", "11:40 AM",
+                        "📦"),
                 createActivityItem("Task completed: Prepare monthly report", "Doctor Analytics", "01:15 PM", "📋"),
-                createActivityItem("New visit scheduled with Dr. Sneha Joshi", "Health Plus Clinic", "02:30 PM", "📅")
-        );
+                createActivityItem("New visit scheduled with Dr. Sneha Joshi", "Health Plus Clinic", "02:30 PM", "📅"));
 
         card.getChildren().addAll(header, feed);
         return card;
@@ -983,7 +984,8 @@ public class MrDashboard {
 
         StackPane iconPane = new StackPane();
         iconPane.setPrefSize(32, 32);
-        iconPane.setStyle("-fx-background-color: white; -fx-background-radius: 8px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        iconPane.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 8px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
         Label iconLbl = new Label(icon);
         iconLbl.setStyle("-fx-font-size: 14px;");
         iconPane.getChildren().add(iconLbl);
@@ -1017,8 +1019,7 @@ public class MrDashboard {
                 "-fx-background-color: white; " +
                         "-fx-background-radius: 16px; " +
                         "-fx-border-color: #E2E8F0; -fx-border-width: 1px; -fx-border-radius: 16px; " +
-                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);"
-        );
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 4);");
 
         addCardHoverEffect(card);
 
@@ -1033,7 +1034,8 @@ public class MrDashboard {
         HBox.setHgrow(sp, Priority.ALWAYS);
 
         Button viewAllBtn = new Button("View All ➔");
-        viewAllBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand;");
+        viewAllBtn.setStyle(
+                "-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand;");
         viewAllBtn.setOnAction(e -> navigateToSection("Product Report"));
 
         header.getChildren().addAll(title, sp, viewAllBtn);
@@ -1043,8 +1045,7 @@ public class MrDashboard {
                 createProductBar("CardioSafe", 12, 15, "#3B82F6"),
                 createProductBar("NeuroPlus", 8, 15, "#06B6D4"),
                 createProductBar("GlucoCare", 6, 15, "#6366F1"),
-                createProductBar("RespiraCalm", 4, 15, "#0EA5E9")
-        );
+                createProductBar("RespiraCalm", 4, 15, "#0EA5E9"));
 
         card.getChildren().addAll(header, list);
         return card;
@@ -1075,10 +1076,12 @@ public class MrDashboard {
         return box;
     }
 
-    private VBox createDetailedScheduleItem(String time, String doc, String spec, String location, String purpose, String status, String statusColor, String bgHex) {
+    private VBox createDetailedScheduleItem(String time, String doc, String spec, String location, String purpose,
+            String status, String statusColor, String bgHex) {
         VBox card = new VBox(12);
         card.setPadding(new Insets(16));
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 14px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        card.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 14px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
         addCardHoverEffect(card);
 
         HBox top = new HBox();
@@ -1092,7 +1095,9 @@ public class MrDashboard {
         HBox.setHgrow(sp, Priority.ALWAYS);
 
         Label sBadge = new Label(status);
-        sBadge.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: " + statusColor + "; -fx-background-color: " + bgHex + "; -fx-padding: 4px 12px; -fx-background-radius: 8px;");
+        sBadge.setStyle(
+                "-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: " + statusColor
+                        + "; -fx-background-color: " + bgHex + "; -fx-padding: 4px 12px; -fx-background-radius: 8px;");
 
         top.getChildren().addAll(tLbl, sp, sBadge);
 
@@ -1118,10 +1123,12 @@ public class MrDashboard {
         return card;
     }
 
-    private VBox createDoctorCard(String name, String spec, String hospital, String visits, String phone, String accentHex) {
+    private VBox createDoctorCard(String name, String spec, String hospital, String visits, String phone,
+            String accentHex) {
         VBox card = new VBox(12);
         card.setPadding(new Insets(18));
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        card.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
         addCardHoverEffect(card);
 
         HBox top = new HBox(12);
@@ -1161,10 +1168,12 @@ public class MrDashboard {
         return card;
     }
 
-    private VBox createHospitalCard(String name, String type, String address, String doctorsCount, String visitCount, String accentHex) {
+    private VBox createHospitalCard(String name, String type, String address, String doctorsCount, String visitCount,
+            String accentHex) {
         VBox card = new VBox(12);
         card.setPadding(new Insets(18));
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        card.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
         addCardHoverEffect(card);
 
         HBox top = new HBox();
@@ -1178,7 +1187,8 @@ public class MrDashboard {
         HBox.setHgrow(sp, Priority.ALWAYS);
 
         Label tBadge = new Label(type);
-        tBadge.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: " + accentHex + "; -fx-background-color: #F1F5F9; -fx-padding: 4px 10px; -fx-background-radius: 8px;");
+        tBadge.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: "
+                + accentHex + "; -fx-background-color: #F1F5F9; -fx-padding: 4px 10px; -fx-background-radius: 8px;");
 
         top.getChildren().addAll(nLbl, sp, tBadge);
 
@@ -1201,10 +1211,12 @@ public class MrDashboard {
         return card;
     }
 
-    private VBox createProductDetailTile(String name, String category, int count, int samplesLeft, double ratio, String accentHex) {
+    private VBox createProductDetailTile(String name, String category, int count, int samplesLeft, double ratio,
+            String accentHex) {
         VBox card = new VBox(12);
         card.setPadding(new Insets(18));
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
+        card.setStyle(
+                "-fx-background-color: white; -fx-background-radius: 16px; -fx-border-color: #E2E8F0; -fx-border-width: 1px;");
         addCardHoverEffect(card);
 
         Label nLbl = new Label("📦 " + name);
@@ -1237,9 +1249,11 @@ public class MrDashboard {
     private Button createPillButton(String text, boolean active) {
         Button btn = new Button(text);
         if (active) {
-            btn.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #2563EB; -fx-background-radius: 20px; -fx-padding: 6px 14px; -fx-cursor: hand;");
+            btn.setStyle(
+                    "-fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #2563EB; -fx-background-radius: 20px; -fx-padding: 6px 14px; -fx-cursor: hand;");
         } else {
-            btn.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-font-weight: medium; -fx-text-fill: #64748B; -fx-background-color: #F1F5F9; -fx-background-radius: 20px; -fx-padding: 6px 14px; -fx-cursor: hand;");
+            btn.setStyle(
+                    "-fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-font-weight: medium; -fx-text-fill: #64748B; -fx-background-color: #F1F5F9; -fx-background-radius: 20px; -fx-padding: 6px 14px; -fx-cursor: hand;");
         }
         return btn;
     }
@@ -1249,8 +1263,7 @@ public class MrDashboard {
         btn.setStyle(
                 "-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-font-weight: bold; " +
                         "-fx-text-fill: " + textHex + "; -fx-background-color: " + bgHex + "; " +
-                        "-fx-background-radius: 10px; -fx-padding: 8px 16px; -fx-cursor: hand;"
-        );
+                        "-fx-background-radius: 10px; -fx-padding: 8px 16px; -fx-cursor: hand;");
 
         ScaleTransition stEnter = new ScaleTransition(Duration.millis(120), btn);
         stEnter.setToX(1.03);
@@ -1267,7 +1280,8 @@ public class MrDashboard {
     }
 
     private void styleFormInput(TextField tf) {
-        tf.setStyle("-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-padding: 8px 12px; -fx-background-radius: 8px; -fx-border-color: #CBD5E1; -fx-border-radius: 8px;");
+        tf.setStyle(
+                "-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-padding: 8px 12px; -fx-background-radius: 8px; -fx-border-color: #CBD5E1; -fx-border-radius: 8px;");
     }
 
     private void addCardHoverEffect(Node card) {

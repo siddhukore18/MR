@@ -30,6 +30,8 @@ import javafx.util.Duration;
 
 import java.net.URL;
 
+import com.example.view.ASM.AsmDashBoard;
+
 public class Welcome extends Application {
 
     public static Stage welcomeStage;
@@ -54,13 +56,11 @@ public class Welcome extends Application {
 
         rootStack.getChildren().addAll(mainContent, splashPane);
 
-        Scene scene = new Scene(rootStack, 1280, 768);
+        Scene scene = new Scene(rootStack, welcomeStage.getWidth(),welcomeStage.getHeight());
         welcomeScene = scene;
 
         welcomeStage.setTitle("MRDesk - Medical Representative Workspace");
         welcomeStage.setScene(welcomeScene);
-        welcomeStage.setMinWidth(1050);
-        welcomeStage.setMinHeight(680);
         welcomeStage.setMaximized(true);
         welcomeStage.show();
     }
@@ -484,7 +484,7 @@ public class Welcome extends Application {
 
         getStartedBtn.setOnAction(event -> {
             LoginPage loginPage = new LoginPage();
-            welcomeStage.setScene(loginPage.createView());
+            welcomeStage.setScene(new AsmDashBoard().createView());
         });
 
         // Secondary Action Button (Create Account)

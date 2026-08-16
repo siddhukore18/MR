@@ -332,7 +332,7 @@ public class LoginPage {
 
         root.getChildren().addAll(backgroundPane, mainCard);
 
-        Scene sc = new Scene(root, 1200, 700);
+        Scene sc = new Scene(root, Welcome.welcomeStage.getWidth(), Welcome.welcomeStage.getHeight());
         loginScene = sc;
 
         // Trigger entrance animations when scene is displayed
